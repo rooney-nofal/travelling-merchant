@@ -21,3 +21,6 @@ Thumbs.db
 # Fichiers générés
 outputs/*
 !outputs/.gitkeep
+
+christofides/outputs/*
+!christofides/outputs/.gitkeep
