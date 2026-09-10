@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_f2c2fe8071cba371f8ab21416307ec39 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_f2c2fe8071cba371f8ab21416307ec39" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_f2c2fe8071cba371f8ab21416307ec39 = L.map(
+                "map_f2c2fe8071cba371f8ab21416307ec39",
+                {
+                    center: [46.6, 2.4],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 6,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_5cdb0eeabcdd013e39284bb7c54662ea = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_5cdb0eeabcdd013e39284bb7c54662ea.addTo(map_f2c2fe8071cba371f8ab21416307ec39);
+        
+    
+            var marker_cd71cc492afe50376ddf7d15f62c772e = L.marker(
+                [48.8566, 2.3522],
+                {
+}
+            ).addTo(map_f2c2fe8071cba371f8ab21416307ec39);
+        
+    
+            marker_cd71cc492afe50376ddf7d15f62c772e.bindTooltip(
+                `<div>
+                     Paris
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_0d304008bc52e48bcae1cac9e3a547b9 = L.marker(
+                [43.2965, 5.3698],
+                {
+}
+            ).addTo(map_f2c2fe8071cba371f8ab21416307ec39);
+        
+    
+            marker_0d304008bc52e48bcae1cac9e3a547b9.bindTooltip(
+                `<div>
+                     Marseille
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_efed37883ffe5bd73afdb51b3ee61f2d = L.marker(
+                [45.764, 4.8357],
+                {
+}
+            ).addTo(map_f2c2fe8071cba371f8ab21416307ec39);
+        
+    
+            marker_efed37883ffe5bd73afdb51b3ee61f2d.bindTooltip(
+                `<div>
+                     Lyon
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_8ff7cc11a8f906662ca96528a2d08c24 = L.marker(
+                [43.6047, 1.4442],
+                {
+}
+            ).addTo(map_f2c2fe8071cba371f8ab21416307ec39);
+        
+    
+            marker_8ff7cc11a8f906662ca96528a2d08c24.bindTooltip(
+                `<div>
+                     Toulouse
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_abfbe1b8007c4c35c0fe54f4643e6d52 = L.marker(
+                [43.7102, 7.262],
+                {
+}
+            ).addTo(map_f2c2fe8071cba371f8ab21416307ec39);
+        
+    
+            marker_abfbe1b8007c4c35c0fe54f4643e6d52.bindTooltip(
+                `<div>
+                     Nice
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_ba673a73fdc4afa5025420bd5a742aa1 = L.marker(
+                [47.2184, -1.5536],
+                {
+}
+            ).addTo(map_f2c2fe8071cba371f8ab21416307ec39);
+        
+    
+            marker_ba673a73fdc4afa5025420bd5a742aa1.bindTooltip(
+                `<div>
+                     Nantes
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_32b03bc20525059fdf945122355f5d64 = L.marker(
+                [48.5734, 7.7521],
+                {
+}
+            ).addTo(map_f2c2fe8071cba371f8ab21416307ec39);
+        
+    
+            marker_32b03bc20525059fdf945122355f5d64.bindTooltip(
+                `<div>
+                     Strasbourg
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_0d09d787681670395ae7c7b15661f2fe = L.marker(
+                [43.6119, 3.8772],
+                {
+}
+            ).addTo(map_f2c2fe8071cba371f8ab21416307ec39);
+        
+    
+            marker_0d09d787681670395ae7c7b15661f2fe.bindTooltip(
+                `<div>
+                     Montpellier
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_165271ebe523e5383c4ac4a068aba6fe = L.marker(
+                [44.8378, -0.5792],
+                {
+}
+            ).addTo(map_f2c2fe8071cba371f8ab21416307ec39);
+        
+    
+            marker_165271ebe523e5383c4ac4a068aba6fe.bindTooltip(
+                `<div>
+                     Bordeaux
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_8f79b1a7c211b6f25272ada18ebf36ae = L.marker(
+                [50.6292, 3.0573],
+                {
+}
+            ).addTo(map_f2c2fe8071cba371f8ab21416307ec39);
+        
+    
+            marker_8f79b1a7c211b6f25272ada18ebf36ae.bindTooltip(
+                `<div>
+                     Lille
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_cbce2d713616aa5811bb796d5bf4e6ec = L.marker(
+                [48.1173, -1.6778],
+                {
+}
+            ).addTo(map_f2c2fe8071cba371f8ab21416307ec39);
+        
+    
+            marker_cbce2d713616aa5811bb796d5bf4e6ec.bindTooltip(
+                `<div>
+                     Rennes
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_6e0430ff95692a32fe6fecef3f6b9894 = L.marker(
+                [49.2583, 4.0317],
+                {
+}
+            ).addTo(map_f2c2fe8071cba371f8ab21416307ec39);
+        
+    
+            marker_6e0430ff95692a32fe6fecef3f6b9894.bindTooltip(
+                `<div>
+                     Reims
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_4d941f88b07c19ca85f09ef49bd927aa = L.marker(
+                [49.4944, 0.1079],
+                {
+}
+            ).addTo(map_f2c2fe8071cba371f8ab21416307ec39);
+        
+    
+            marker_4d941f88b07c19ca85f09ef49bd927aa.bindTooltip(
+                `<div>
+                     Le Havre
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_5da1c0e88686e130a8c173362f6f324c = L.marker(
+                [45.4397, 4.3872],
+                {
+}
+            ).addTo(map_f2c2fe8071cba371f8ab21416307ec39);
+        
+    
+            marker_5da1c0e88686e130a8c173362f6f324c.bindTooltip(
+                `<div>
+                     Saint-Étienne
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_c9ec3c9d3d81863fd9c6df8b0b1eace7 = L.marker(
+                [43.1242, 5.928],
+                {
+}
+            ).addTo(map_f2c2fe8071cba371f8ab21416307ec39);
+        
+    
+            marker_c9ec3c9d3d81863fd9c6df8b0b1eace7.bindTooltip(
+                `<div>
+                     Toulon
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_73f26f061ba34d64a175700d141d1096 = L.marker(
+                [45.1885, 5.7245],
+                {
+}
+            ).addTo(map_f2c2fe8071cba371f8ab21416307ec39);
+        
+    
+            marker_73f26f061ba34d64a175700d141d1096.bindTooltip(
+                `<div>
+                     Grenoble
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_3e88d3a952920e56a33c3479e6306612 = L.marker(
+                [47.322, 5.0415],
+                {
+}
+            ).addTo(map_f2c2fe8071cba371f8ab21416307ec39);
+        
+    
+            marker_3e88d3a952920e56a33c3479e6306612.bindTooltip(
+                `<div>
+                     Dijon
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_90b9a961232714e73dd80310bcccfaca = L.marker(
+                [47.4784, -0.5632],
+                {
+}
+            ).addTo(map_f2c2fe8071cba371f8ab21416307ec39);
+        
+    
+            marker_90b9a961232714e73dd80310bcccfaca.bindTooltip(
+                `<div>
+                     Angers
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_f76b8b29127d8a399fac4d9435c8c15f = L.marker(
+                [43.8367, 4.3601],
+                {
+}
+            ).addTo(map_f2c2fe8071cba371f8ab21416307ec39);
+        
+    
+            marker_f76b8b29127d8a399fac4d9435c8c15f.bindTooltip(
+                `<div>
+                     Nîmes
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_f1aca887ff74ec0668f8bdb0841ffccf = L.marker(
+                [45.7772, 3.087],
+                {
+}
+            ).addTo(map_f2c2fe8071cba371f8ab21416307ec39);
+        
+    
+            marker_f1aca887ff74ec0668f8bdb0841ffccf.bindTooltip(
+                `<div>
+                     Clermont-Ferrand
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_8f4123b9d7918dec8e58983ced29695a = L.polyline(
+                [[48.8566, 2.3522], [43.2965, 5.3698], [45.764, 4.8357], [43.6047, 1.4442], [43.7102, 7.262], [47.2184, -1.5536], [48.5734, 7.7521], [43.6119, 3.8772], [44.8378, -0.5792], [50.6292, 3.0573], [48.1173, -1.6778], [49.2583, 4.0317], [49.4944, 0.1079], [45.4397, 4.3872], [43.1242, 5.928], [45.1885, 5.7245], [47.322, 5.0415], [47.4784, -0.5632], [43.8367, 4.3601], [45.7772, 3.087], [48.8566, 2.3522]],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_f2c2fe8071cba371f8ab21416307ec39);
+        
+    
+            poly_line_8f4123b9d7918dec8e58983ced29695a.bindTooltip(
+                `<div>
+                     9012.5 km
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+</script>
+</html>
