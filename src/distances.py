@@ -1,39 +1,84 @@
-"""Haversine (great-circle) distances between cities and the full distance matrix."""
-import math
+"""Calcul des distances Haversine et de la matrice des distances."""
 
+import math
 import numpy as np
 
+
+# Rayon moyen de la Terre en kilomètres.
 EARTH_RADIUS_KM = 6371.0
 
 
 def haversine(lat1, lon1, lat2, lon2):
-    """Return the great-circle distance in km between two points given in decimal degrees."""
-    phi1, phi2 = math.radians(lat1), math.radians(lat2)
-    delta_phi = math.radians(lat2 - lat1)
-    delta_lambda = math.radians(lon2 - lon1)
-    a = math.sin(delta_phi / 2) ** 2 + math.cos(phi1) * math.cos(phi2) * math.sin(delta_lambda / 2) ** 2
-    c = 2 * math.atan2(math.sqrt(a), math.sqrt(1 - a))
-    return EARTH_RADIUS_KM * c   
+    """
+    Calcule la distance entre deux villes
+    à partir de leurs coordonnées GPS.
+    """
+
+    # Les fonctions trigonométriques utilisent des radians,
+    # donc on convertit les degrés en radians.
+    phi1 = math.radians(lat1)
+    phi2 = math.radians(lat2)
+
+    # Différence de latitude.
+    delta_phi = math.radians(
+        lat2 - lat1
+    )
+
+    # Différence de longitude.
+    delta_lambda = math.radians(
+        lon2 - lon1
+    )
+
+    # Formule de Haversine.
+    a = (
+        math.sin(delta_phi / 2) ** 2
+        + math.cos(phi1)
+        * math.cos(phi2)
+        * math.sin(delta_lambda / 2) ** 2
+    )
+
+    c = 2 * math.atan2(
+        math.sqrt(a),
+        math.sqrt(1 - a),
+    )
+
+    # Distance finale en kilomètres.
+    return EARTH_RADIUS_KM * c
+
 
 def build_distance_matrix(cities):
-    """Return an n x n numpy array of Haversine distances between all city pairs."""
+    """
+    Construit une matrice contenant
+    la distance entre chaque paire de villes.
+    """
+
+    # Nombre de villes.
     n = len(cities)
-    matrix = np.zeros((n, n))
+
+    # Matrice n x n initialisée avec des zéros.
+    matrix = np.zeros(
+        (n, n)
+    )
+
+    # On parcourt toutes les villes.
     for i in range(n):
+
+        # On ne calcule que la moitié de la matrice,
+        # car distance Paris-Lyon = distance Lyon-Paris.
         for j in range(i + 1, n):
-            distance = haversine(cities[i][1], cities[i][2], cities[j][1], cities[j][2])
+
+            # Calcul de la distance entre la ville i et la ville j.
+            distance = haversine(
+                cities[i][1],
+                cities[i][2],
+                cities[j][1],
+                cities[j][2],
+            )
+
+            # Distance i -> j.
             matrix[i][j] = distance
+
+            # Même distance dans l'autre sens.
             matrix[j][i] = distance
+
     return matrix
-
-if __name__ == "__main__":
-    from cities import load_cities
-
-    all_cities = load_cities()
-    m = build_distance_matrix(all_cities)
-    print(f"Matrix shape: {m.shape}")
-    print(f"Paris -> Marseille: {m[0][1]:.1f} km")
-    print(f"Diagonal all zero: {bool((m.diagonal() == 0).all())}")
-    print(f"Symmetric: {bool((m == m.T).all())}")
-
-    
