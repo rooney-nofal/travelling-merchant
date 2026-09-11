@@ -1,1 +1,0 @@
-"""Travelling Merchant - outils TSP."""
